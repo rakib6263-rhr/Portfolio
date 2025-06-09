@@ -67,7 +67,14 @@
     <a href="https://www.instagram.com/rakibul_hasan_12345?igsh=eWV0cmRhb3d6YWFl" target="_blank">Instagram</a>
   </div>
 </header>
-
+<section>
+  <h2>About Me</h2>
+  <p>
+    Hi! I'm Rakibul Hasan Rihan. I'm a student who loves learning about web design and development.
+    I know a bit of HTML and enjoy building simple websites. My goal is to improve my skills and
+    create more professional-looking websites like this portfolio!
+  </p>
+</section>
 <section>
   <h2>Contact Me</h2>
   <form action="https://formsubmit.co/rhr6263@gmail.com" method="POST">
