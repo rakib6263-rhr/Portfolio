@@ -252,7 +252,7 @@
   <!-- Contact Section -->
   <div class="section contact" id="contact">
     <h2>Contact Me</h2>
-    <form action="mailto:rhr6263@gmail.com" method="post" enctype="text/plain">
+    <form action="rhr6263@gmail.com" method="post" enctype="text/plain">
       <input type="text" name="name" placeholder="Your Name" required />
       <input type="email" name="email" placeholder="Your Email" required />
       <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
