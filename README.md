@@ -252,7 +252,7 @@
   <!-- Contact Section -->
   <div class="section contact" id="contact">
     <h2>Contact Me</h2>
-    <form action="https://formsubmit.co/your@email.com" method="POST">
+    <form action="https://formsubmit.co/rhr6263@gmail.com" method="POST">
   <input type="text" name="name" placeholder="Your Name" required />
   <input type="email" name="email" placeholder="Your Email" required />
   <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
