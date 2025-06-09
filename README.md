@@ -3,21 +3,31 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Rihan's Portfolio</title>
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
   <style>
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
       font-family: 'Segoe UI', sans-serif;
-      background-color: #f4f4f4;
+    }
+
+    body {
+      background: #f8f9fa;
+      padding-top: 70px; /* Prevent navbar overlap */
     }
 
     /* Navbar */
     .navbar {
+      background-color: #4a90e2;
+      color: white;
+      padding: 15px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background-color: #222;
-      color: white;
-      padding: 15px 20px;
       position: fixed;
       width: 100%;
       top: 0;
@@ -25,18 +35,17 @@
     }
 
     .navbar h2 {
-      margin: 0;
-      font-size: 20px;
+      font-size: 22px;
     }
 
     .menu-icon {
-      cursor: pointer;
       width: 30px;
+      cursor: pointer;
     }
 
     .menu-icon div {
+      background: white;
       height: 4px;
-      background-color: white;
       margin: 5px 0;
       border-radius: 2px;
     }
@@ -44,7 +53,7 @@
     .nav-links {
       display: none;
       flex-direction: column;
-      background-color: #333;
+      background: #357ABD;
       position: absolute;
       top: 60px;
       left: 0;
@@ -53,47 +62,93 @@
 
     .nav-links a {
       color: white;
-      padding: 15px 20px;
       text-decoration: none;
-      border-top: 1px solid #444;
+      padding: 15px 20px;
+      border-top: 1px solid #4a90e2;
     }
 
     .nav-links a:hover {
-      background-color: #444;
+      background: #28527a;
     }
 
     .nav-active {
       display: flex;
     }
 
-    .main-content {
-      padding: 100px 20px 40px;
+    /* Sections */
+    .section {
+      padding: 100px 20px 60px;
       text-align: center;
     }
 
-    /* Gallery Section */
-    .gallery {
-      margin-top: 40px;
+    .section h1, .section h2 {
+      margin-bottom: 10px;
     }
 
-    .gallery h2 {
-      font-size: 24px;
+    .section p {
+      color: #555;
+      font-size: 16px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* Home Section */
+    .home h1 {
+      font-size: 32px;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .styled-name {
+      font-size: 40px;
+      font-weight: 800;
+      color: #2c3e50;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+      letter-spacing: 1.5px;
+      background: linear-gradient(to right, #4a90e2, #00c6ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
       margin-bottom: 20px;
     }
 
-    .gallery p {
-      color: #555;
+    .social-links {
+      margin-top: 10px;
+    }
+
+    .social-links a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #4a90e2;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .social-links a:hover {
+      color: #2c6fb2;
+      text-decoration: underline;
+    }
+
+    .social-links i {
+      margin-right: 6px;
+      color: #4a90e2;
+    }
+
+    /* About Section */
+    .about {
+      background: #e6f2ff;
     }
 
     /* Contact Section */
     .contact {
-      padding: 40px 20px;
-      background-color: #fff;
-      margin-top: 40px;
+      margin: 40px 20px;
+      padding: 20px;
+      background: #fff3cd;
+      border-radius: 10px;
     }
 
     .contact h2 {
-      margin-bottom: 20px;
+      color: #856404;
+      margin-bottom: 15px;
     }
 
     .contact form {
@@ -104,23 +159,51 @@
     .contact input,
     .contact textarea {
       width: 100%;
-      padding: 10px;
-      margin: 10px 0;
+      padding: 12px;
+      margin: 8px 0;
       border: 1px solid #ccc;
-      border-radius: 4px;
+      border-radius: 6px;
     }
 
     .contact button {
-      background-color: #222;
+      background-color: #4a90e2;
       color: white;
       padding: 10px 20px;
       border: none;
-      border-radius: 4px;
+      border-radius: 6px;
       cursor: pointer;
     }
 
     .contact button:hover {
-      background-color: #444;
+      background-color: #2c6fb2;
+    }
+
+    /* Gallery Section */
+    .gallery {
+      margin: 40px 20px;
+      background: #e8f0fe;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    /* Responsive */
+    @media (min-width: 600px) {
+      .nav-links {
+        flex-direction: row;
+        position: static;
+        background: none;
+        display: flex !important;
+      }
+
+      .nav-links a {
+        border: none;
+        padding: 10px 15px;
+        color: white;
+      }
+
+      .menu-icon {
+        display: none;
+      }
     }
   </style>
 </head>
@@ -128,34 +211,46 @@
 
   <!-- Navbar -->
   <div class="navbar">
-    <h2>Rihan's Site</h2>
-    <div class="menu-icon" onclick="toggleMenu()">
+    <h2>Rihan's Portfolio</h2>
+    <div class="menu-icon" onclick="toggleMenu()" aria-label="Toggle navigation menu">
       <div></div>
       <div></div>
       <div></div>
     </div>
+    <div class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a href="#gallery">Gallery</a>
+    </div>
   </div>
 
-  <!-- Menu -->
-  <div class="nav-links" id="navLinks">
-    <a href="#contact">Contact</a>
-    <a href="#gallery">Gallery</a>
+  <!-- Home Section -->
+  <div class="section home" id="home">
+    <h1 class="styled-name">Rakibul Hasan Rihan</h1>
+    <div class="social-links">
+      <a href="https://www.facebook.com/share/16iGimgYqJ/" target="_blank">
+        <i class="fab fa-facebook"></i>Facebook
+      </a>
+      <a href="https://www.instagram.com/rakibul_hasan_12345" target="_blank">
+        <i class="fab fa-instagram"></i>Instagram
+      </a>
+    </div>
   </div>
 
-  <!-- Main Content -->
-  <div class="main-content">
-    <h1>Welcome to My Website</h1>
-    <p>This is a simple portfolio website created by Rakibul Hasan Rihan.</p>
-  </div>
-
-  <!-- Gallery Section -->
-  <div class="gallery" id="gallery">
-    <h2>Gallery</h2>
-    <p>Gallery content coming soon...</p>
+  <!-- About Section -->
+  <div class="section about" id="about">
+    <h2>About Me</h2>
+    <p>
+      Hello! I'm <strong>Rakibul Hasan Rihan</strong>, a passionate student and web enthusiast.
+      I enjoy exploring the world of web development and creating simple, user-friendly websites.
+      With basic HTML knowledge and growing interest in design, I'm building my digital portfolio step-by-step.
+      This website represents my learning journey and a place where others can connect with me.
+    </p>
   </div>
 
   <!-- Contact Section -->
-  <div class="contact" id="contact">
+  <div class="section contact" id="contact">
     <h2>Contact Me</h2>
     <form action="mailto:rhr6263@gmail.com" method="post" enctype="text/plain">
       <input type="text" name="name" placeholder="Your Name" required />
@@ -163,6 +258,12 @@
       <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
       <button type="submit">Send</button>
     </form>
+  </div>
+
+  <!-- Gallery Section -->
+  <div class="section gallery" id="gallery">
+    <h2>Gallery</h2>
+    <p>Gallery items will be shown here soon.</p>
   </div>
 
   <script>
