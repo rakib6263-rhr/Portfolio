@@ -64,7 +64,7 @@
   <header>
     <h1>Rakibul Hasan Rihan</h1>
     <p>I'm a Student & Web Enthusiast</p>
-    <img src="rihan.jpg.heic" alt="My Photo" style="width: 200px; border-radius: 50%; margin-top: 20px;" />
+    <img src="rihan.png" alt="My Photo" style="width: 200px; border-radius: 50%; margin-top: 20px;" />
     <div class="social-icons">
       <a href="https://www.facebook.com/share/16iGimgYqJ/" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
       <a href="https://www.instagram.com/rakibul_hasan_12345?igsh=eWV0cmRhb3d6YWFl" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
