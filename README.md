@@ -1,91 +1,88 @@
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Rakibul Hasan Rihan | Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rakibul Hasan Rihan - Portfolio</title>
   <style>
     body {
+      font-family: Arial, sans-serif;
       margin: 0;
-      font-family: 'Roboto', sans-serif;
-      background-color: #f0f2f5;
+      padding: 0;
+      background-color: #f4f4f4;
       color: #333;
     }
     header {
-      background: linear-gradient(135deg, #4f46e5, #3b82f6);
+      background-color: #0d47a1;
       color: white;
+      padding: 20px;
       text-align: center;
-      padding: 60px 20px;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-    }
-    header p {
-      margin-top: 10px;
-      font-size: 1.2rem;
     }
     .social-icons a {
+      margin: 0 10px;
       color: white;
-      font-size: 1.8rem;
-      margin: 10px;
       text-decoration: none;
-    }
-    main {
-      max-width: 700px;
-      margin: 30px auto;
-      background: white;
-      padding: 25px;
-      border-radius: 12px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      font-size: 20px;
     }
     section {
-      margin-bottom: 30px;
-    }
-    section h2 {
-      color: #3b82f6;
-      font-size: 1.6rem;
-      border-bottom: 2px solid #93c5fd;
-      padding-bottom: 5px;
-      margin-bottom: 15px;
-    }
-    footer {
-      text-align: center;
       padding: 20px;
-      background: #1e3a8a;
+      max-width: 600px;
+      margin: auto;
+      background: white;
+      border-radius: 10px;
+      margin-top: 30px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+    input, textarea {
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+    button {
+      padding: 10px;
+      background-color: #3b82f6;
       color: white;
-      font-size: 0.9rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #2563eb;
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>Rakibul Hasan Rihan</h1>
-    <p>I'm a Student & Web Enthusiast</p>
-    <img src="rihan.png" alt="My Photo" style="width: 200px; border-radius: 50%; margin-top: 20px;" />
-    <div class="social-icons">
-      <a href="https://www.facebook.com/share/16iGimgYqJ/" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
-      <a href="https://www.instagram.com/rakibul_hasan_12345?igsh=eWV0cmRhb3d6YWFl" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-    </div>
-  </header>
+<header>
+  <h1>Rakibul Hasan Rihan</h1>
+  <p>I'm a Student & Web Enthusiast</p>
+  <img src="rihan.png" alt="My Photo" style="width: 200px; border-radius: 50%; margin-top: 20px;" />
+  <div class="social-icons">
+    <a href="https://www.facebook.com/share/16iGimgYqJ/" target="_blank">Facebook</a>
+    <a href="https://www.instagram.com/rakibul_hasan_12345?igsh=eWV0cmRhb3d6YWFl" target="_blank">Instagram</a>
+  </div>
+</header>
 
-  <main>
-    <section>
-      <h2>About Me</h2>
-      <p>Hello! I'm Rakibul, a student learning HTML and web development. I enjoy building simple and clean websites as a beginner. This is my personal portfolio where you can learn a bit about me and my work.</p>
-    </section>
+<section>
+  <h2>Contact Me</h2>
+  <form action="https://formsubmit.co/rhr6263@gmail.com" method="POST">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
 
-    <section>
-      <h2>Contact</h2>
-      <p>You can reach me through my social media profiles linked above. I'm always happy to connect!</p>
-    </section>
-  </main>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
 
-  <footer>
-    &copy; 2025 Rakibul Hasan Rihan. All rights reserved.
-  </footer>
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" rows="5" required></textarea>
+
+    <button type="submit">Send Message</button>
+  </form>
+</section>
 
 </body>
 </html>
