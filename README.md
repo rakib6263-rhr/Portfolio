@@ -1,95 +1,175 @@
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Rakibul Hasan Rihan - Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rihan's Portfolio</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
       background-color: #f4f4f4;
-      color: #333;
     }
-    header {
-      background-color: #0d47a1;
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #222;
       color: white;
-      padding: 20px;
-      text-align: center;
+      padding: 15px 20px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
     }
-    .social-icons a {
-      margin: 0 10px;
-      color: white;
-      text-decoration: none;
+
+    .navbar h2 {
+      margin: 0;
       font-size: 20px;
     }
-    section {
-      padding: 20px;
-      max-width: 600px;
-      margin: auto;
-      background: white;
-      border-radius: 10px;
-      margin-top: 30px;
+
+    .menu-icon {
+      cursor: pointer;
+      width: 30px;
     }
-    form {
-      display: flex;
+
+    .menu-icon div {
+      height: 4px;
+      background-color: white;
+      margin: 5px 0;
+      border-radius: 2px;
+    }
+
+    .nav-links {
+      display: none;
       flex-direction: column;
+      background-color: #333;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
     }
-    input, textarea {
-      padding: 10px;
-      margin-bottom: 15px;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-      font-size: 1rem;
-    }
-    button {
-      padding: 10px;
-      background-color: #3b82f6;
+
+    .nav-links a {
       color: white;
+      padding: 15px 20px;
+      text-decoration: none;
+      border-top: 1px solid #444;
+    }
+
+    .nav-links a:hover {
+      background-color: #444;
+    }
+
+    .nav-active {
+      display: flex;
+    }
+
+    .main-content {
+      padding: 100px 20px 40px;
+      text-align: center;
+    }
+
+    /* Gallery Section */
+    .gallery {
+      margin-top: 40px;
+    }
+
+    .gallery h2 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .gallery p {
+      color: #555;
+    }
+
+    /* Contact Section */
+    .contact {
+      padding: 40px 20px;
+      background-color: #fff;
+      margin-top: 40px;
+    }
+
+    .contact h2 {
+      margin-bottom: 20px;
+    }
+
+    .contact form {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    .contact input,
+    .contact textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .contact button {
+      background-color: #222;
+      color: white;
+      padding: 10px 20px;
       border: none;
-      border-radius: 8px;
-      font-size: 1rem;
+      border-radius: 4px;
       cursor: pointer;
     }
-    button:hover {
-      background-color: #2563eb;
+
+    .contact button:hover {
+      background-color: #444;
     }
   </style>
 </head>
 <body>
 
-<header>
-  <h1>Rakibul Hasan Rihan</h1>
-  <p>I'm a Student & Web Enthusiast</p>
-  <img src="rihan.png" alt="My Photo" style="width: 200px; border-radius: 50%; margin-top: 20px;" />
-  <div class="social-icons">
-    <a href="https://www.facebook.com/share/16iGimgYqJ/" target="_blank">Facebook</a>
-    <a href="https://www.instagram.com/rakibul_hasan_12345?igsh=eWV0cmRhb3d6YWFl" target="_blank">Instagram</a>
+  <!-- Navbar -->
+  <div class="navbar">
+    <h2>Rihan's Site</h2>
+    <div class="menu-icon" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
   </div>
-</header>
-<section>
-  <h2>About Me</h2>
-  <p>
-    Hi! I'm Rakibul Hasan Rihan. I'm a student who loves learning about web design and development.
-    I know a bit of HTML and enjoy building simple websites. My goal is to improve my skills and
-    create more professional-looking websites like this portfolio!
-  </p>
-</section>
-<section>
-  <h2>Contact Me</h2>
-  <form action="https://formsubmit.co/rhr6263@gmail.com" method="POST">
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name" required>
 
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required>
+  <!-- Menu -->
+  <div class="nav-links" id="navLinks">
+    <a href="#contact">Contact</a>
+    <a href="#gallery">Gallery</a>
+  </div>
 
-    <label for="message">Message:</label>
-    <textarea id="message" name="message" rows="5" required></textarea>
+  <!-- Main Content -->
+  <div class="main-content">
+    <h1>Welcome to My Website</h1>
+    <p>This is a simple portfolio website created by Rakibul Hasan Rihan.</p>
+  </div>
 
-    <button type="submit">Send Message</button>
-  </form>
-</section>
+  <!-- Gallery Section -->
+  <div class="gallery" id="gallery">
+    <h2>Gallery</h2>
+    <p>Gallery content coming soon...</p>
+  </div>
+
+  <!-- Contact Section -->
+  <div class="contact" id="contact">
+    <h2>Contact Me</h2>
+    <form action="mailto:rhr6263@gmail.com" method="post" enctype="text/plain">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("nav-active");
+    }
+  </script>
 
 </body>
 </html>
